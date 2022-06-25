@@ -1,0 +1,68 @@
+.form {
+  margin: auto 0;
+  padding: 50px;
+  border: 2px solid #FF4402;
+  border-radius:  4px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
+  &__title {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+    color: #FF4402;
+    cursor: default;
+  }
+
+  &__input {
+    position: relative;
+
+    & input {
+      width: 100%;
+      padding: 10px;
+      border-bottom: 1px solid #1B1B1C;
+      outline: none;
+      font-size: 18px;
+      &.invalid {
+        border-bottom-color: #FF4402;;
+      }
+    }
+
+    & span {
+      position: absolute;
+      left: 0;
+      padding: 10px;
+      pointer-events: none;
+      font-size: 18px;
+      transition: 0.5s;
+    }
+
+    & input:valid ~ span,
+    & input:focus ~ span{
+      opacity: 0.7;
+      transform: translate(-10px, -18px);
+      font-size: 12px;
+    }
+  }
+
+  &__btn {
+    padding: 10px 0;
+    text-align: center;
+    background: #FF4402;
+    color: #FFF;
+    font-size: 18px;
+    line-height: 120%;
+  }
+
+  &__error {
+    color: #FF4402;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.5s;
+  }
+
+}
