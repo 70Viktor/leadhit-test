@@ -4,7 +4,7 @@ import AuthorizationView from '@/views/AuthorizationView/AuthorizationView'
 
 const routes = [
   {
-    path: '/authorization',
+    path: '/',
     name: 'authorization',
     component: AuthorizationView
   },
@@ -15,7 +15,6 @@ const routes = [
     meta: {
       requiresAuth: true
     }
-
   }
 ]
 
@@ -27,7 +26,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   to.matched.some((record) => {
     if ( record.meta.requiresAuth && !localStorage.getItem('leadhit-site-id') ) {
-      next('/authorization')
+      next('/')
       alert('Необходимо авторизоваться')
     } else {
       next()

@@ -2,7 +2,7 @@
   <div class="wrapper">
     <nav class="navbar">
       <div class="navbar__item navbar__logo"><img  src="@/assets/logo.svg" alt=""/></div>
-      <router-link :class="$route.name === 'authorization' ? '_active' : ''" class="navbar__item" to="/authorization">Авторизация</router-link>
+      <router-link :class="$route.name === 'authorization' ? '_active' : ''" class="navbar__item" to="/">Авторизация</router-link>
       <router-link :class="$route.name === 'analytics' ? '_active' : ''" class="navbar__item" to="/analytics">Аналитика</router-link>
     </nav>
     <router-view v-slot="{ Component }">
